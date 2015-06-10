@@ -155,8 +155,8 @@ class Gadgets:
         elif arch == CS_ARCH_ARM:
             if self.__options.thumb or self.__options.rawMode == "thumb":
                 gadgets = [
-                               [b"[\x00\x08\x10\x18\x20\x28\x30\x38\x40\x48\x70]{1}\x47", 2, 2], # bx   reg
-                               [b"[\x80\x88\x90\x98\xa0\xa8\xb0\xb8\xc0\xc8\xf0]{1}\x47", 2, 2], # blx  reg
+                               [b"[\x00\x08\x10\x18\x20\x28\x30\x38\x40\x48\x70\x6a]{1}\x47", 2, 2], # bx   reg
+                               [b"[\x80\x88\x90\x98\xa0\xa8\xb0\xb8\xc0\xc8\xf0\x6a]{1}\x47", 2, 2], # blx  reg
                                [b"[\x00-\xff]{1}\xbd", 2, 2]                                     # pop {,pc}
                           ]
                 arch_mode = CS_MODE_THUMB
